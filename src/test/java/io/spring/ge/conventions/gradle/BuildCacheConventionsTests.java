@@ -76,9 +76,11 @@ class BuildCacheConventionsTests {
 
 	private static final class TestBuildCacheConfiguration implements BuildCacheConfiguration {
 
-		private final DirectoryBuildCache local = new DirectoryBuildCache();
+		private final DirectoryBuildCache local = new DirectoryBuildCache() {
+		};
 
-		private final HttpBuildCache remote = new HttpBuildCache();
+		private final HttpBuildCache remote = new HttpBuildCache() {
+		};
 
 		@Override
 		public DirectoryBuildCache getLocal() {
